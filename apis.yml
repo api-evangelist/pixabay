@@ -3,21 +3,53 @@ url: https://raw.githubusercontent.com/api-evangelist/pixabay/refs/heads/main/ap
 name: Pixabay
 x-type: company
 description: >-
-  Pixabay is a community-driven free stock images, videos, and music site. Public API supports image and video search.
+  Pixabay is a free stock images, videos, illustrations, vectors, and music platform. The Pixabay API
+  offers a public REST API for searching and retrieving free media assets. Authentication is via API
+  key obtained on free signup.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Stock Media
   - Images
+  - Videos
+  - Illustrations
   - Free
-  - API
-  - Royalty-Free
+  - Search
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: pixabay:images
+    name: Pixabay Image API
+    description: >-
+      Search and retrieve royalty-free images, illustrations, and vectors. Filter by category, image type,
+      orientation, color, and more. Returns image URLs at multiple resolutions.
+    humanURL: https://pixabay.com/api/docs/
+    baseURL: https://pixabay.com/api/
+    tags:
+      - Images
+      - Search
+      - Illustrations
+    properties:
+      - type: Documentation
+        url: https://pixabay.com/api/docs/
+  - aid: pixabay:videos
+    name: Pixabay Video API
+    description: >-
+      Search and retrieve royalty-free videos with multiple resolutions (large, medium, small, tiny) and
+      dimensions metadata.
+    humanURL: https://pixabay.com/api/docs/#api_search_videos
+    baseURL: https://pixabay.com/api/videos/
+    tags:
+      - Videos
+      - Search
+    properties:
+      - type: Documentation
+        url: https://pixabay.com/api/docs/#api_search_videos
 common:
   - type: Website
     url: https://pixabay.com/
+  - type: DeveloperPortal
+    url: https://pixabay.com/api/docs/
   - type: Plans
     url: plans/pixabay-plans-pricing.yml
   - type: RateLimits

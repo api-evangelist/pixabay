@@ -5,31 +5,42 @@ provider: Pixabay
 providerId: pixabay
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Stock Media
 - Images
+- Videos
+- Illustrations
 - Free
-- API
-- Royalty-Free
+- Search
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for Pixabay. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  Pixabay enforces a default limit of 100 requests per 60 seconds and requires 24-hour caching of
+  results. Higher limits are available on request. The API returns standard rate-limit headers
+  (X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset) and HTTP 429 when exceeded.
+notes: 100 requests/minute default; cache at least 24h.
 sources:
-- https://pixabay.com/
+- https://pixabay.com/api/docs/
 responseCodes:
   throttled: 429
 limits:
 - name: Default
   scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+  metric: requests
+  limit: 100 per 60 seconds
+  notes: Standard limit; higher available on request.
+- name: Caching
+  scope: client
+  metric: hours
+  limit: 24h minimum
+  notes: Cache results for 24 hours minimum per Pixabay TOS.
 policies:
 - name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  description: Honor 429 with exponential backoff; check X-RateLimit-Reset.
+- name: Caching
+  description: Cache responses at least 24 hours per TOS.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

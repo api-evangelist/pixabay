@@ -5,20 +5,24 @@ provider: Pixabay
 providerId: pixabay
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Stock Media
 - Images
+- Videos
+- Illustrations
 - Free
-- API
-- Royalty-Free
+- Search
 - FinOps
 - Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for Pixabay. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: >-
+  FOCUS-aligned FinOps profile for Pixabay. The API is free; there is no invoice or charge from
+  Pixabay for API usage. The only operating cost is internal: caching infrastructure to satisfy the
+  24-hour cache requirement and honor the 100 RPM ceiling.
+notes: Zero direct cost; internal caching infrastructure is the only cost driver.
 sources:
-- https://pixabay.com/
+- https://pixabay.com/api/docs/
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -29,15 +33,13 @@ alignedWith:
 publisherName: Pixabay
 serviceCategory: Stock Media
 billingModel:
-  pricingCategory: To Be Reconciled
-  billingFrequency: Monthly
-  billingCurrency: USD
+  pricingCategory: Free
+  billingFrequency: N/A
+  billingCurrency: N/A
   chargeCategories:
   - Usage
-  - Purchase
-  - Adjustment
 focusColumns:
-  ServiceName: Pixabay
+  ServiceName: Pixabay API
   ServiceCategory: Stock Media
   ProviderName: Pixabay
   PublisherName: Pixabay
@@ -45,22 +47,22 @@ focusColumns:
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: api_requests
+  description: Pixabay API request count (free; observability only).
+  unit: request
   aggregation: sum
   dimensions:
-  - account
-  - resource
+  - app
+  - endpoint
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Track API call volume internally; no provider invoice.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: Allocate any caching infrastructure costs to the consuming product.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Implement aggressive caching to stay within 100 RPM.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: App owner manages the API key.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
