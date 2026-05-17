@@ -1,7 +1,7 @@
 aid: pixabay
 url: https://raw.githubusercontent.com/api-evangelist/pixabay/refs/heads/main/apis.yml
 name: Pixabay
-x-type: company
+kind: company
 description: >-
   Pixabay is a free stock images, videos, illustrations, vectors, and music platform. The Pixabay API
   offers a public REST API for searching and retrieving free media assets. Authentication is via API
