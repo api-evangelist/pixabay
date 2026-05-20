@@ -46,6 +46,10 @@ apis:
       - type: Documentation
         url: https://pixabay.com/api/docs/#api_search_videos
 common:
+  - type: GitHubOrganization
+    url: https://github.com/Pixabay
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/pixabay
   - type: Website
     url: https://pixabay.com/
   - type: DeveloperPortal
