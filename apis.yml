@@ -46,6 +46,10 @@ apis:
       - type: Documentation
         url: https://pixabay.com/api/docs/#api_search_videos
 common:
+  - type: VulnerabilityDisclosure
+    url: security/pixabay-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/pixabay-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/Pixabay
   - type: LinkedIn
