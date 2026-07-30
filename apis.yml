@@ -6,7 +6,19 @@ description: >-
   Pixabay is a free stock images, videos, illustrations, vectors, and music platform. The Pixabay API
   offers a public REST API for searching and retrieving free media assets. Authentication is via API
   key obtained on free signup.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Free
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/pixabay.png
 tags:
   - Stock Media
   - Images
