@@ -21,6 +21,13 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/pixabay.png
 tags:
   - Stock Media
+  - Image
+  - Videos
+  - Illustrations
+  - Free
+  - Search
+tags_raw:
+  - Stock Media
   - Images
   - Videos
   - Illustrations
@@ -38,6 +45,10 @@ apis:
     humanURL: https://pixabay.com/api/docs/
     baseURL: https://pixabay.com/api/
     tags:
+      - Image
+      - Search
+      - Illustrations
+    tags_raw:
       - Images
       - Search
       - Illustrations
