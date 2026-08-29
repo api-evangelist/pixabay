@@ -6,6 +6,17 @@ description: >-
   Pixabay is a free stock images, videos, illustrations, vectors, and music platform. The Pixabay API
   offers a public REST API for searching and retrieving free media assets. Authentication is via API
   key obtained on free signup.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: unknown
