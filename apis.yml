@@ -45,7 +45,7 @@ tags_raw:
   - Free
   - Search
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
   - aid: pixabay:images
@@ -83,6 +83,8 @@ apis:
       - type: Documentation
         url: https://pixabay.com/api/docs/#api_search_videos
 common:
+  - url: https://pixabay.com/blog/
+    type: Blog
   - type: VulnerabilityDisclosure
     url: security/pixabay-vulnerability-disclosure.yml
   - type: DomainSecurity
